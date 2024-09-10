@@ -16,33 +16,33 @@ pipeline{
 
     }
     stages{
-        // stage("Cleanup Workspace"){
-        //     steps {
-        //         cleanWs()
-        //     }
+        stage("Cleanup Workspace"){
+            steps {
+                cleanWs()
+            }
 
-        // }
+        }
     
-        // stage("Checkout from SCM"){
-        //     steps {
-        //         git branch: 'main', credentialsId: 'github', url: 'https://github.com/AbdulHadi1010/complete-prodcution-e2e-pipeline-main'
-        //     }
+        stage("Checkout from SCM"){
+            steps {
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/AbdulHadi1010/complete-prodcution-e2e-pipeline-main'
+            }
 
-        // }
+        }
 
-        // stage("Build Application"){
-        //     steps {
-        //         sh "mvn clean package"
-        //     }
+        stage("Build Application"){
+            steps {
+                sh "mvn clean package"
+            }
 
-        // }
+        }
 
-        // stage("Test Application"){
-        //     steps {
-        //         sh "mvn test"
-        //     }
+        stage("Test Application"){
+            steps {
+                sh "mvn test"
+            }
 
-        // }  
+        }  
         
         stage("Build & Push Docker Image") {
             steps {
